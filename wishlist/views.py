@@ -14,3 +14,7 @@ def show_wishlist(request):
 def show_wishlist_json(request):
     data = BarangWishlist.objects.all()
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+def show_wishlist_xml(request):
+    data = BarangWishlist.objects.all()
+    return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
